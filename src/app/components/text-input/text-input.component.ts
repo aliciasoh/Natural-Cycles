@@ -66,10 +66,9 @@ export class TextInputComponent implements OnInit {
   getStoredValues(){
     this.element = document.getElementsByClassName('text-result')[0];
     let initialWidth = ((window.screen.width * (50))/100)*(0.5);
-
     this.sliderValue = localStorage.getItem("sliderValue") ? localStorage.getItem("sliderValue") : 50;
     this.textValue = localStorage.getItem("textValue") ? localStorage.getItem("textValue") : "";
-    this.element['style'].width = localStorage.getItem("resultWidth") ? localStorage.getItem("resultWidth") + "px" : (initialWidth+"px");
+    this.element['style'].width = parseInt(localStorage.getItem("resultWidth")) >= 0 ? localStorage.getItem("resultWidth") + "px" : initialWidth+"px";
     this.element['style'].fontSize = localStorage.getItem("textSize") ? localStorage.getItem("textSize") + "px" : "";
   }
 
