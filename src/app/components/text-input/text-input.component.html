@@ -1,0 +1,21 @@
+<div [ngClass]="{'night': isNight}" class="bg">
+    <div class="text-container">
+        <form>
+            Your Input (Don't forget to hire me):
+            <input placeholder="Hire me :)" [(ngModel)]="textValue" (keyup)="onTextChange()" [ngModelOptions]="{standalone: true}">
+            <mat-slider
+            class="slider-prop"
+                [thumbLabel]="true"
+                [(ngModel)]="sliderValue"
+                [ngModelOptions]="{standalone: true}"
+                (input)="onSliderChange($event)"
+                >
+            </mat-slider>
+        </form>
+        <div class="text-result-container">
+            <div class="text-result">
+                {{textValue}}
+            </div>
+        </div>
+    </div>
+</div>
